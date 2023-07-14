@@ -3,6 +3,7 @@ import { createCards } from "./cards.js";
 import { createMenu } from "./createMenu.js";
 
 const gameWin = () => {
+
     const card = document.querySelectorAll(".card");
     let flag = true;
     card.forEach(el => {
@@ -76,8 +77,23 @@ export const createField = (lvl) => {
                     if (prev.style.backgroundImage == card.style.backgroundImage) {
                         prev = null;
                         if (gameWin()) {
-                            createMenu()
+                            let model = document.createElement('div');
+                            model.classList.add('model');
+                            let context = document.createElement('div');
+                            context.classList.add("context");
+                            context.textContent = "ВЫ ПОБЕДИЛИ"
+                            let button = document.createElement('div');
+                            button.classList.add("btn");
+                            button.textContent = "выйти в меню "
+                            model.appendChild(context);
+                            model.appendChild(button);
+                            main.appendChild(model);
+                            button.addEventListener('click', () => {
+                                createMenu();
+
+                            })
                         }
+
                     }
 
                     else {

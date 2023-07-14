@@ -1,5 +1,7 @@
 import { createField } from "./createField.js";
 export const createMenu = () => {
+    const model = document.querySelector(".model")
+    if (model) model.remove();
     const main = document.querySelector("main");
     main.classList.remove("null");
 
