@@ -1,1 +1,1 @@
-Zewgyy.game.io
+/zewgyy.github.io/game/
